@@ -44,7 +44,7 @@ test('allGetters_NominalCaseWithInvalidCustomCurrency_ThrowException', () => {
     let name = "Iphone 27";
     let quantity = 10;
     let price = 20;
-    let currency = "US";
+    let currency = "US";//currency must be meet the ISO format (USD, CHF, EUR)
 
     //when
     expect(() => new CartItem(articleId, name, quantity, price, currency)).toThrow(InvalidCurrencyException);
@@ -71,7 +71,7 @@ test('constructor_InvalidQuantity_ThrowException', () => {
     //given
     let articleId = 1;
     let name = "Iphone 27";
-    let quantity = -10;//Invalid article id (smaller than 1)
+    let quantity = -10;//Invalid quantity (smaller dans 1)
     let price = 20;
 
     //when
