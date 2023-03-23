@@ -22,7 +22,7 @@ module.exports = class CartItem {
         if(articleId < 1) {
             throw new InvalidArticleIdException;
         }
-        if(currency != "CHF") {
+        if(currency.length != 3) {
             throw new InvalidCurrencyException;
         }
         if(quantity < 1) {
