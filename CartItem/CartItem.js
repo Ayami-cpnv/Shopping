@@ -25,19 +25,23 @@ module.exports = class CartItem {
         if(currency.length != 3) {
             throw new InvalidCurrencyException;
         }
+        //No need because we verify in the functions
+        /*
         if(quantity < 1) {
             throw new InvalidQuantityException;
         }
         if(price < 10) {
             throw new InvalidPriceException;
-        }
+        }*/
         if(name.length > 20 || name.length < 3) {
             throw new InvalidNameException;
         }
         this.#articleId = articleId;
         this.#name = name;
-        this.#quantity = quantity;
-        this.#price = price;
+        this.quantity = quantity;
+        //this.#price = price;
+        //To avoid to write 2 times same code, use function set price
+        this.price = price;
         this.#currency = currency;
 
     }
