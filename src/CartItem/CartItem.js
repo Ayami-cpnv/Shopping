@@ -43,7 +43,6 @@ module.exports = class CartItem {
         //To avoid to write 2 times same code, use function set price
         this.price = price;
         this.#currency = currency;
-
     }
 
     get articleId() {
